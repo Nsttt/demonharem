@@ -1,0 +1,703 @@
+// MUSIC PLAYER -- People mo demons mo angels mo hikkurumete hai! (Happy!) Nandemo iinjanai? (Woohoo!)
+.music-player-container {
+	display: none; // JS will override this
+	justify-content: center;
+	text-align: center;
+	padding: 25px;
+	padding: 30px;
+	background: rgba(17, 0, 0, 0.666);
+	color: #fff;
+	position: relative;
+	z-index: 999;
+
+	.music-player {
+		color: #404040;
+		height: 80px;
+		max-width: 100%;
+		text-align: left;
+		border: #ccc 1px solid;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+		border-radius: 5px;
+		display: inline-flex;
+		flex-direction: row;
+		background: #EEE;
+
+		&.display-intro .music-details,
+		&.display-loading .music-details {
+			display: none;
+		}
+
+		&:not(.display-intro) .intro-text {
+			display: none;
+		}
+
+		&:not(.display-loading) .loading {
+			display: none;
+		}
+
+		.play-controller {
+			display:inline-flex;
+			float: left;
+			justify-content: center;
+			align-items: center;
+			width: 75px;
+			font-size: 37.5px;
+			color: #444;
+			border-right: #ccc 1px solid;
+			flex: none;
+			cursor: pointer;
+		}
+
+		.intro-text, .loading {
+			width: 450px;
+			height: 100%;
+			padding: 10px 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			font-size: 14pt;
+			line-height: 14pt;
+			flex-direction: column;
+
+			b {
+				margin-bottom: 5px;
+			}
+		}
+
+		.loading {
+			background: rgba(0, 0, 0, 0.1);
+			color: #888;
+			font-size: 48px;
+		}
+
+		.music-details {
+			width: 450px;
+			height: 100%;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+
+			.name {
+				margin-bottom: 15px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				.title {
+					font-weight: 500;
+					font-size: 18pt;
+				}
+
+				.author {
+					color: rgba(0,0,0,0.6);
+
+					&::before {
+						content: ' - ';
+					}
+				}
+			}
+
+			.time-controller {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				
+				.time-bar {
+					height: 10px;
+					background: rgba(0,0,0,0.2);
+					border-radius: 10px;
+					width: 100%;
+					cursor: pointer;
+					
+					.elapsed {
+						height: 100%;
+						background: #e66;
+						border-radius: 10px 0 0 10px;
+						
+						.slider-tip {
+							float: right;
+							width: 10px;
+							height: 20px;
+							border-radius: 10px;
+							background: #ffff;
+							margin-right: -5px;
+							margin-top: -5px;
+							border: 1px solid #ccc;
+							box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+						}
+					}
+				}
+
+				.volume {
+					display: flex;
+					font-size: 16pt;
+					margin-left: 5px;
+					margin-right: -5px;
+					margin-bottom: -6.5px;
+					margin-top: -6.5px;
+					padding: 5px;
+					cursor: pointer;
+					z-index: 10;
+
+					&:hover {
+						transition: 0.25s ease-out background;
+						background: rgba(0, 0, 0, 0.75);
+						color: #fff;
+						margin-right: -85px;
+
+						.volume-box {
+							display: block;
+						}
+					}
+
+					.volume-box {
+						width: 80px;
+						display: none;
+						padding: 8px;
+
+						.volume-bar {
+							height: 100%;
+							width: 100%;
+							background: rgba(255, 255, 255, 0.5);
+							position: relative;
+
+							.volume-fill {
+								background: #fff;
+								height: 100%;
+								position: relative;
+							}
+
+							.volume-tip {
+								position: absolute;
+								right: 0;
+								top: 50%;
+								height: 15px;
+								margin: -7.5px -2px;
+								width: 4px;
+								background: #fff;
+							}
+						}
+					}
+				}
+
+				.time-progression {
+					margin-left: 10px;
+					white-space: nowrap;
+				}
+			}
+
+			.countdown {
+				height: 0;
+				text-align: right;
+				transform: translateY(-16px);
+
+				&.hidden {
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	p {
+		margin: 0;
+		margin-top: 5px;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	#satania-dance {
+		position: absolute;
+		left: calc(50% + 175px);
+		bottom: 0;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 290px;
+		height: 362px;
+		background: url('img/satania_dance_spritesheet.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/satania_dance_spritesheet.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#sound-visualizer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -2;
+	}
+}
+
+.dev-announcement-container {
+	padding: 10px;
+	background: linear-gradient(
+		-270deg,
+		rgba(35, 169, 208,0.9) 0%,
+		rgba(121, 103, 187, 0.9) 100%
+	);
+
+	.dev-announcement {
+		h2 {
+			display:block;
+			max-width: 450px;
+			margin: auto;
+		}
+		
+		p {
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		p, h1, h2 {
+			margin-top: 0;
+			margin-bottom: 24px;
+		}
+
+		svg {
+			vertical-align: middle;
+			margin: 0 4px;
+		}
+
+		a {
+			font-size: 30px;
+			line-height: 30px;
+			font-weight: 600;
+			color: #FFF;
+			border-bottom: 3px solid #a43039;
+			text-decoration: none;
+			transition: all 0.05s ease-out;
+			padding: 0 10px;
+
+			&:hover {
+				background: #E669;
+				border-bottom: 0 solid #a43039;
+			}
+
+			&:focus {
+				background: #E663;
+			}
+		}
+
+		color: #fff;
+		margin: 25px auto;
+		text-align: center;
+	}
+}
+
+// TABLE -- Tables are better than chairs lmao
+
+table {
+	width: 100%;
+	display: block;
+	margin: 10px 0;
+
+	tr {
+		display: flex;
+		justify-content: center;
+
+		td,
+		th {
+			display: flex;
+			flex-direction: column;
+			width: 200px;
+			padding: 15px 10px;
+			justify-content: center;
+			align-items: center;
+
+			b {
+				font-weight: 600;
+				color: #222;
+				letter-spacing: 1px;
+				white-space: pre;
+			}
+		}
+	}
+
+	thead {
+		display: block;
+
+		th {
+			font-size: 24px;
+			font-weight: normal;
+		}
+
+		.highlight {
+			background: #e66;
+			font-weight: 700;
+			color: #fff;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+	}
+
+	tbody {
+		font-size: 18px;
+		display: block;
+
+		// Doing the borders like that makes them prettier on the left and right than when just applying to the tbody
+		// Also, it fixes weird flex spacing issues
+		tr:first-child td {
+			border-top: 4px solid rgba(0,0,0,0.1);
+		}
+
+		tr:last-child td {
+			border-bottom: 4px solid rgba(0,0,0,0.1);
+		}
+
+		tr td:first-child {
+			border-left: 4px solid rgba(0,0,0,0.1);
+		}
+
+		tr td:last-child {
+			border-right: 4px solid rgba(0,0,0,0.1);
+		}
+
+		.highlight {
+			color: #a43039;
+			font-weight: 700;
+			border-left: 4px solid #a43039 !important;
+			border-right: 4px solid #a43039 !important;
+		}
+
+		tr:first-child .highlight {
+			border-top: 4px solid #d65c5c;
+		}
+
+		tr:last-child .highlight {
+			border-bottom: 4px solid #a43039;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+		tr:nth-child(odd) td {
+			background: #fff;
+		}
+
+		tr:nth-child(even) td {
+			background: #eaecee;
+		}
+
+		.fas {
+			//color: #a43039;
+			line-height: 32px;
+			font-size: 24px;
+		}
+	}
+
+	.category {
+		width: 300px;
+		text-align: left;
+		align-items: baseline;
+	}
+}
+// SLIDESHOW -- Because you can't have enough cute pics of Satania-sama, you gotta make a slideshow of them instead of choosing just one
+@keyframes image-appear {
+	0%,
+	100% {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+
+	10%,
+	90% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.slideshow {
+	text-align: center;
+
+	picture, img {
+		display: none;
+		max-width: 100%;
+		animation-name: image-appear;
+		animation-duration: 2.5s;
+		animation-timing-function: ease-in-out;
+		opacity: 0;
+
+	}
+
+	picture.shown, .shown img {
+		display: inline-block;
+	}
+
+	.source {
+		position: absolute;
+		bottom: 10px;
+		right: 50%;
+		background: #a43039;
+		color: #fff;
+		text-decoration: none;
+		padding: 5px 10px;
+		border-radius: 2px;
+		z-index: 100;
+		opacity: 0.8;
+	}
+
+	.source:hover {
+		background: #a43039;
+		opacity: 1;
+	}
+}
+// COMPARE -- Because the other characters are terrible
+.compare {
+	display: flex;
+	overflow-x: auto;
+	justify-content: center;
+
+	.character {
+		margin: 10px;
+		display: inline-block;
+		width: 200px;
+		flex: 1 0 auto;
+		background: #EEE;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		max-width: 360px;
+
+		img {
+			width: 100%;
+		}
+
+		.name {
+			font-size: 40px;
+			font-weight: 500;
+			background: #F7F7F7;
+			padding: 10px;
+			border-top: 2px solid #d5d5d5;
+
+			.small {
+				color: rgba(0,0,0,0.6);
+				font-size: 16px;
+			}
+		}
+
+		ul {
+			text-align: left;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				padding: 10px;
+				border-top: 2px solid #d5d5d5;
+			}
+		}
+	}
+}
+// GOOGLE DEFINITION -- Everything had to be remade from scratch...
+.google-searchbar {
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+	transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	height: 44px;
+	line-height: 44px;
+	padding: 0 16px;
+	font-size: 16px;
+	font-family: arial,"Roboto Light", "Noto",sans-serif;
+	font-weight: normal;
+	font-feature-settings: initial;
+	color: #000;
+	margin: 16px 0;
+	cursor: text;
+	text-align: left;
+	max-width: 512px;
+	width: 100%;
+	display: inline-block;
+
+	&:hover {
+		box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: right;
+		font-size: 24px;
+		color: #4285f4;
+		height: 100%;
+
+		* {
+			cursor: pointer;
+		}
+
+		:first-child {
+			margin: 0 16px;
+		}
+	}
+}
+
+.google-definition {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+	font-family: arial,sans-serif;
+	font-feature-settings: initial;
+	background: #fff;
+	padding: 16px;
+	margin: 16px 0;
+	color: #222;
+	border-radius: 2px;
+	text-align: left;
+	max-width: 512px;
+	width: 100%;
+	display: inline-block;
+
+	h1 {
+		font-size: 32px;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	h3 {
+		font-size: 18px;
+		margin: 0;
+		font-weight: normal;
+	}
+
+	#listen:hover {
+		color: #000;
+		cursor: pointer;
+		user-select:none;
+	}
+
+	.noun {
+		padding-top: 10px;
+		font-style: italic;
+		font-size: 13px;
+	}
+
+	.definition {
+		display: list-item;
+		margin-left: 30px;
+		padding-left: 0;
+		padding-top: 10px;
+		font-size: 13px;
+		font-weight: 400;
+
+		b {
+			font-weight: bold;
+		}
+
+		&.no-bullet {
+			display: block;
+			margin-left: 0;
+			padding-left: 20px;
+		}
+
+		.example {
+			color: #878787;
+		}
+
+		.synonyms {
+			display: flex;
+
+			span:first-child {
+				margin-right: 3px;
+			}
+		}
+
+		a {
+			color: #1a0dab;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// EVEN POPE FRANCIS LOVES SATANIA -- I hear he's quite popular in the Bible fandom
+.pope-francis {
+	background-image: url('img/pope.jpg');
+	min-height: 50vw !important;
+
+	.has-webp & {
+		background-image: url('img/webp/pope.webp');
+	}
+}
+
+// FLIPPING CARDS -- You click, they flip, simple enough
+.card-toogle {
+	display: none;
+}
+
+.card {
+	text-align: left;
+	padding: 10px;
+	width: 220px;
+	height: 340px;
+	vertical-align: middle;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+	background: #fff;
+	cursor: pointer;
+	transition: 0.1s all ease-out;
+	font-size: 24px;
+	line-height: 1.1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 15px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	font-weight: 400;
+
+	b {
+		font-weight: 600;
+		color: #333;
+	}
+
+	&:hover {
+		width: 230px;
+		height: 350px;
+		margin: 10px;
+		padding: 15px;
+		background: #F5F5F5;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+	}
+
+	input.card-toogle:checked ~ & {
+		background: #EEE;
+		width: 240px;
+		height: 360px;
+		margin: 5px;
+		padding: 20px;
+
+		.question {
+			display: none;
+		}
+
+		.answer {
+			display: block;
+		}
+	}
+
+	// because of CSS selector prioritisation, this repetition is needed
+	&:active,
+	input.card-toogle:checked ~ &:active {
+		background: #E5E5E5;
+		width: 220px;
+		height: 340px;
+		margin: 15px;
+		padding: 10px;
+	}
+
+	.answer {
+		display: none;
+		font-size: 20px;
+	}
+}
