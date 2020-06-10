@@ -1,6 +1,6 @@
 const {Howl, Howler} = require('howler');
 
-const SATANIA_VOCALS_POS = 10000;
+const SATANIA_VOCALS_POS = 45;
 
 const playState = {
 	wasPlaying: false,
@@ -32,7 +32,7 @@ const volumeController = musicPlayer.querySelector('.volume');
 const volumeSlider = musicPlayer.querySelector('.volume-bar');
 const volumeFill = musicPlayer.querySelector('.volume-fill');
 
-const dance = document.getElementById('satania-dance');
+const dance = document.getElementById('azazel-dance');
 
 musicPlayerContainer.style.display = 'block';
 
@@ -65,9 +65,9 @@ function formatTime(time) {
 }
 
 const OFFSET = 0.35;
-const BPM = 130 / 2;
-const BEAT_DURATION = 60 / BPM;
-const NUMBER_OF_FRAMES = 22;
+const BPM = 79 / 2;
+const BEAT_DURATION = 32 / BPM;
+const NUMBER_OF_FRAMES = 12;
 const ANIMATION_OFFSET = 18;
 
 function setBarPos(pos) {

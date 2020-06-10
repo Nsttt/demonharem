@@ -209,22 +209,22 @@
 		color: inherit;
 	}
 
-	#satania-dance {
+	#azazel-dance {
 		position: absolute;
-		left: calc(50% + 175px);
-		bottom: 0;
+		left: calc(50% + 310px);
+		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
-		width: 290px;
-		height: 362px;
-		background: url('img/satania_dance_spritesheet.png');
+		width: 100px;
+		height: 100px;
+		background: url('img/azazel_dance.png');
 		background-size: cover;
 		z-index: -1;
 		pointer-events: none;
 
 
 		.has-webp & {
-			background-image: url("./img/webp/satania_dance_spritesheet.webp");
+			background-image: url("./img/webp/azazel_dance.webp");
 		}
 
 		@media (max-width: 1024px) {
