@@ -32,7 +32,16 @@ const volumeController = musicPlayer.querySelector('.volume');
 const volumeSlider = musicPlayer.querySelector('.volume-bar');
 const volumeFill = musicPlayer.querySelector('.volume-fill');
 
-const dance = document.getElementById('azazel-dance');
+const azazelDance = document.getElementById('azazel-dance');
+const cerberusDance = document.getElementById('cerberus-dance');
+const pandemonicaDance = document.getElementById('pandemonica-dance');
+const justiceDance = document.getElementById('justice-dance');
+const modeusDance = document.getElementById('modeus-dance');
+const judgmentDance = document.getElementById('judgement-dance');
+const zdradaDance = document.getElementById('zdrada-dance');
+const malinaDance = document.getElementById('malina-dance');
+const luciferDance = document.getElementById('lucifer-dance');
+
 
 musicPlayerContainer.style.display = 'block';
 
@@ -88,16 +97,19 @@ function setBarPos(pos) {
 	const timeSinceBeat = (seek + OFFSET) % BEAT_DURATION;
 	const currentFrame = (Math.floor((timeSinceBeat / BEAT_DURATION) * NUMBER_OF_FRAMES) + ANIMATION_OFFSET) % NUMBER_OF_FRAMES;
 
-	dance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
+	azazelDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
+	cerberusDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
 
 	if (
 		(seek > 66 && seek < 96) ||
 		(seek > 110.5 && seek < 140) ||
 		(seek > 192 && seek < 222)
 	) {
-		dance.style.opacity = 1;
+		azazelDance.style.opacity = 1;
+		cerberusDance.style.opacity = 1;
 	} else {
-		dance.style.opacity = 0;
+		azazelDance.style.opacity = 0;
+		cerberusDance.style.opacity = 0;
 	}
 
 	playState.beat = timeSinceBeat;

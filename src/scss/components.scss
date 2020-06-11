@@ -1,4 +1,4 @@
-// MUSIC PLAYER -- People mo demons mo angels mo hikkurumete hai! (Happy!) Nandemo iinjanai? (Woohoo!)
+// MUSIC PLAYER -- EVerything related to the music player goes here.
 .music-player-container {
 	display: none; // JS will override this
 	justify-content: center;
@@ -232,6 +232,190 @@
 		}
 	}
 
+	#cerberus-dance {
+		position: absolute;
+		left: 20%;
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/cerberus_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/cerberus_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#pandemonica-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/pandemonica_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/pandemonica_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#modeus-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/modeus_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/modeus_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#judgement-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/judgement_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/judgement_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#justice-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/justice_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/justice_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#zdrada-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/zdrada_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/zdrada_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#malina-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/malina_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/malina_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#lucifer-dance {
+		position: absolute;
+		left: calc(50% + 310px);
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/lucifer_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/lucifer_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
 	#sound-visualizer {
 		position: absolute;
 		top: 0;
@@ -402,7 +586,7 @@ table {
 		align-items: baseline;
 	}
 }
-// SLIDESHOW -- Because you can't have enough cute pics of Satania-sama, you gotta make a slideshow of them instead of choosing just one
+// SLIDESHOW -- Slideshow for the fanarts.
 @keyframes image-appear {
 	0%,
 	100% {
@@ -452,7 +636,7 @@ table {
 		opacity: 1;
 	}
 }
-// COMPARE -- Because the other characters are terrible
+// COMPARE -- For all the characters.
 .compare {
 	display: flex;
 	overflow-x: auto;
