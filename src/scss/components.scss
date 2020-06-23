@@ -211,7 +211,7 @@
 
 	#azazel-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: calc(50% + 610px);
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -232,7 +232,7 @@
 		}
 	}
 
-	#cerberus-dance {
+	#cerberus1-dance {
 		position: absolute;
 		left: 20%;
 		bottom: 20%;
@@ -255,9 +255,55 @@
 		}
 	}
 
+	#cerberus2-dance {
+		position: absolute;
+		left: 24%;
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/cerberus_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/cerberus_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	#cerberus3-dance {
+		position: absolute;
+		left: 28%;
+		bottom: 20%;
+		opacity: 0;
+		transition: 0.5s ease-out opacity;
+		width: 100px;
+		height: 100px;
+		background: url('img/cerberus_dance.png');
+		background-size: cover;
+		z-index: -1;
+		pointer-events: none;
+
+
+		.has-webp & {
+			background-image: url("./img/webp/cerberus_dance.webp");
+		}
+
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
 	#pandemonica-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 0%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -280,7 +326,7 @@
 
 	#modeus-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 30%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -303,7 +349,7 @@
 
 	#judgement-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 95%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -326,7 +372,7 @@
 
 	#justice-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 70%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -349,7 +395,7 @@
 
 	#zdrada-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 60%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
@@ -395,7 +441,7 @@
 
 	#lucifer-dance {
 		position: absolute;
-		left: calc(50% + 310px);
+		left: 66%;
 		bottom: 20%;
 		opacity: 0;
 		transition: 0.5s ease-out opacity;
