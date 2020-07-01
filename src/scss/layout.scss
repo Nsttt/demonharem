@@ -1,0 +1,288 @@
+// LAYOUT -- Every rules that relates to the general layout of the website goes here
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: top right;
+	background-attachment: fixed;
+
+	.small {
+		opacity: 1;
+		margin-top: 20px;
+	}
+
+	.language-select {
+		z-index: 100;
+		display: flex;
+	}
+
+	#translator-mode {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		z-index: 1000;
+		display: none;
+	}
+
+	#translator-mode:target {
+		display: flex;
+	}
+
+	#translator-mode > * {
+		margin: 2px;
+	}
+
+	.disclaimer {
+		margin: 10px;
+		font-size: 18px;
+		font-weight: 500;
+		width: 100%;
+		max-width: 600px;
+	}
+
+	.scroll-notice {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 80%;
+		font-size: 18pt;
+		z-index: 1000;
+
+		.fas {
+			font-size: 28pt;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		padding: 10px;
+		z-index: 10;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+
+		img {
+			height: 70px;
+			margin: 10px;
+			opacity: 0.6;
+			transition: 0.1s all linear;
+	
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.credits {
+		flex: auto;
+		font-size: 20px;
+		color: rgba(255,255,255,0.9);
+		text-shadow: 0 1px 5px #000;
+		z-index: 150;
+		text-align: right;
+		margin-left: 20px;
+
+		b {
+			font-size: 22px;
+		}
+
+	}
+}
+
+.back-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.30) 100%);
+	z-index: 5;
+}
+
+.main .title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+	z-index: 10;
+
+	h1 {
+		font-size: 128px;
+		line-height: 128px;
+		margin: 0;
+		font-weight: 600;
+	}
+
+	h2 {
+		font-size: 32px;
+		margin: 0;
+		font-weight: normal;
+	}
+
+	p {
+		margin: 0 0 10px;
+	}
+
+	.button-container {
+		margin: 60px;
+
+		& > span {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	#discord-count,
+	#reddit-count {
+		display: none;
+	}
+}
+
+.intro {
+	background-image: url("./img/back.jpg");
+	background-size: cover;
+	background-position: top right;
+
+	.has-webp & {
+		background-image: url("./img/webp/back.webp");
+	}
+
+	.title h2 {
+		background: #e669;
+		padding: 5px;
+		border-radius: 5px;
+	}
+}
+
+.end {
+	background-image: url("./img/back_end.jpg");
+
+	.has-webp & {
+		background-image: url("./img/webp/back_end.webp");
+	}
+
+	.title h2 {
+		margin-top: 30px;
+	}
+}
+
+.scroll {
+	box-shadow: 0 -12.5px 25px rgba(0,0,0,0.25);
+}
+
+.section {
+	width: 100%;
+	overflow: hidden;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 0 10px;
+	background-image: url("../assets/img/dialogueBG_hell.png");
+	color: #404040;
+	background-size: cover;
+	background-position: center;
+	min-height: 500px;
+	border-bottom: solid 2px #ddd;
+
+	&:nth-child(odd) {
+		background-image: url("../assets/img/dialogueBG_hell.png");
+	}
+
+	&:nth-child(even) {
+		background-image: url("../assets/img/dialogueBG_hell.png");
+	}
+
+	.center,
+	.left,
+	.right {
+		display: inline-block;
+		width: 50%;
+		max-width: 512px;
+		z-index: 10;
+		padding: 50px 0;
+		margin: 0 10px;
+	}
+
+	.image {
+		padding: 0;
+		display: flex;
+
+		img {
+			min-height: 500px;
+		}
+	}
+
+	.left {
+		text-align: right;
+	}
+
+	.image.left {
+		justify-content: flex-end;
+	}
+
+	.image.right {
+		justify-content: flex-start;
+	}
+
+	.center {
+		width: 100%;
+		max-width: 1024px;
+		text-align: center;
+	}
+
+	h2 {
+		color: #444;
+		font-size: 42px;
+		font-weight: 500;
+		margin: 5px 0;
+	}
+
+	p {
+		color: #555;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.4;
+		margin: 24px 0 12px;
+
+		b {
+			font-weight: 500;
+			color: #444;
+		}
+	}
+
+	&.background {
+		padding: 30px 0;
+		text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+
+		h2 {
+			color: #fff;
+			font-size: 64px;
+			font-weight: 500;
+			margin: auto;
+		}
+
+		p {
+			color: #fff;
+			font-size: 32px;
+			margin: auto 16px;
+			font-weight: 400;
+		}
+	}
+}

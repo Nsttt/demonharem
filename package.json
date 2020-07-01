@@ -1,0 +1,40 @@
+{
+	"name": "demonharem",
+	"description": ">:3",
+	"private": true,
+	"author": "Nsttt",
+	"version": "1.0.0",
+	"repository": "https://github.com/nsttt/demonharem",
+	"homepage": "https://demonwaifus.com",
+	"scripts": {
+		"build": "gulp build",
+		"serve": "gulp serve"
+	},
+	"dependencies": {
+		"@babel/polyfill": "^7.10.1",
+		"@fluent/langneg": "^0.4.0",
+		"howler": "^2.2.0",
+		"js-yaml": "^3.14.0",
+		"whatwg-fetch": "^3.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.10.2",
+		"@babel/preset-env": "^7.10.2",
+		"autoprefixer": "^9.8.0",
+		"browser-sync": "^2.26.7",
+		"del": "^5.1.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-csso": "^4.0.1",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-if": "^3.0.0",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-uglify": "^3.0.2",
+		"node-sass": "^4.14.1",
+		"through2": "^3.0.1",
+		"webpack-stream": "^5.2.1"
+	}
+}

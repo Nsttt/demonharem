@@ -1,0 +1,167 @@
+// GENERAL -- Every boring rule that applies to the whole page or small elements used repeatedly goes here
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: crimson-pro;
+	// Set 3 of Source Sans Pro makes the g letter looks nicer
+	font-feature-settings: "ss03" 1;
+	color: rgba(0, 0, 0, 0.87);
+	margin: 0;
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+[lang|=el] {
+	// Set 3 must be disabled in Greek as it affects the lowercase θ letter in a bad way
+	font-feature-settings: "ss03" 0 !important;
+}
+
+img {
+	vertical-align: middle; // Fixes a slight 3px margin bug with img
+}
+
+a {
+	color: #a43039;
+}
+
+.mobile {
+	display: none;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 1000px;
+	padding: 15px 20px;
+	background: #a43039;
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.25), inset 0 -4px 0 rgba(0,0,0,0.2);
+	text-shadow: none;
+	font-weight: 500;
+	margin: 10px;
+	transition: all linear 0.1s;
+
+	.fas, .fab {
+		font-size: 32px;
+		margin-right: 10px;
+		vertical-align: sub;
+	}
+
+	&.discord {
+		background: #a43039;
+	}
+
+	&.reddit {
+		color: #FF5700;
+		background: #EFF7FF;
+	}
+
+	&:hover {
+		filter: brightness(1.15); // Too lazy to configure the colors manually
+	}
+}
+
+.language-select #language-protip {
+	position: absolute;
+	bottom: 100%;
+	display: none;
+	margin-bottom: 10px;
+	padding: 20px 35px 20px 25px;
+	background: #a43039; 
+	border-radius: 5px;
+	color: #fff;
+	line-height: 1.25;
+	font-size: 16px;
+
+	#close-language-protip {
+		position: absolute;
+		top: 7.5px;
+		right: 7.5px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+
+	&::after {
+		content: "";
+		border: 10px transparent solid;
+		border-top: 10px #a43039 solid;
+		position: absolute;
+		top: 100%;
+		left: 55px;
+	}
+}
+
+.select-wrapper {
+	font-size: 20px;
+
+	.select-button {
+		background: #eee;
+		padding: 0 1em;
+		padding-right: 3em;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+		height: 2em;
+		display: flex;
+		align-items: center;
+
+
+		.fas {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 2em;
+			height: 2em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-left: 1px solid #ccc;
+		}
+	}
+
+	select {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	position: relative;
+	min-width: 125px;
+}
+
+.small {
+	font-size: 14px;
+	font-weight: 500;
+	display: block;
+	opacity: 0.65;
+}
+
+.canvas-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	filter: blur(1.5px);
+	transition: background-color 0.5s ease-out;
+}
+
+.nose-button {
+	cursor: pointer;
+	position: absolute;
+	top: calc(50% + 10px);
+	left: calc(50% + 235px);
+	height: 40px;
+	width: 55px;
+}
+
+::selection {
+	background: #a43039;
+	color: #fff;
+}
