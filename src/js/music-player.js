@@ -32,22 +32,23 @@ const volumeController = musicPlayer.querySelector('.volume');
 const volumeSlider = musicPlayer.querySelector('.volume-bar');
 const volumeFill = musicPlayer.querySelector('.volume-fill');
 
-const azazelDance = document.getElementById('azazel-dance');
-const cerberus1Dance = document.getElementById('cerberus1-dance');
-const cerberus2Dance = document.getElementById('cerberus2-dance');
-const cerberus3Dance = document.getElementById('cerberus3-dance');
-const pandemonicaDance = document.getElementById('pandemonica-dance');
-const justiceDance = document.getElementById('justice-dance');
-const modeusDance = document.getElementById('modeus-dance');
-const judgementDance = document.getElementById('judgement-dance');
-const zdradaDance = document.getElementById('zdrada-dance');
-const malinaDance = document.getElementById('malina-dance');
-const luciferDance = document.getElementById('lucifer-dance');
-
+const dancers = [
+document.getElementById('azazel-dance'),
+document.getElementById('cerberus1-dance'),
+document.getElementById('cerberus2-dance'),
+document.getElementById('cerberus3-dance'),
+document.getElementById('pandemonica-dance'),
+document.getElementById('justice-dance'),
+document.getElementById('modeus-dance'),
+document.getElementById('judgement-dance'),
+document.getElementById('zdrada-dance'),
+document.getElementById('malina-dance'),
+document.getElementById('lucifer-dance'),
+]
 
 musicPlayerContainer.style.display = 'block';
 
-playButton.addEventListener('click', () => {
+playButton.addEventListener('click', () => {																																																																						
 	if (musicPlayer.classList.contains('display-intro')) {
 		musicPlayer.classList.add('display-loading');
 		musicPlayer.classList.remove('display-intro');
@@ -99,46 +100,20 @@ function setBarPos(pos) {
 	const timeSinceBeat = (seek + OFFSET) % BEAT_DURATION;
 	const currentFrame = (Math.floor((timeSinceBeat / BEAT_DURATION) * NUMBER_OF_FRAMES) + ANIMATION_OFFSET) % NUMBER_OF_FRAMES;
 
-	azazelDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	cerberus1Dance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	cerberus2Dance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	cerberus3Dance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	justiceDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	pandemonicaDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	judgementDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	modeusDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	malinaDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	zdradaDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
-	luciferDance.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
 
+	for (dancer of dancers) {
+		dancer.style.backgroundPosition = `${currentFrame / (NUMBER_OF_FRAMES - 1) * 100}% 0`;
+	}
 	if (
-		(seek > 66 && seek < 96) ||
-		(seek > 110.5 && seek < 140) ||
-		(seek > 192 && seek < 222)
+		(seek > 45)
 	) {
-		azazelDance.style.opacity = 1;
-		cerberus1Dance.style.opacity = 1;
-		cerberus2Dance.style.opacity = 1;
-		cerberus3Dance.style.opacity = 1;
-		justiceDance.style.opacity = 1;
-		pandemonicaDance.style.opacity = 1;
-		judgementDance.style.opacity = 1;
-		modeusDance.style.opacity = 1;
-		malinaDance.style.opacity = 1;
-		zdradaDance.style.opacity = 1;
-		luciferDance.style.opacity = 1;
+		for (dancer of dancers) {
+			dancer.style.opacity = 1;
+		}
 	} else {
-		azazelDance.style.opacity = 0;
-		cerberus1Dance.style.opacity = 0;
-		cerberus2Dance.style.opacity = 0;
-		cerberus3Dance.style.opacity = 0;
-		justiceDance.style.opacity = 0;
-		pandemonicaDance.style.opacity = 0;
-		judgementDance.style.opacity = 0;
-		modeusDance.style.opacity = 0;
-		malinaDance.style.opacity = 0;
-		zdradaDance.style.opacity = 0;
-		luciferDance.style.opacity = 0;
+		for (dancer of dancers) {
+			dancer.style.opacity = 0;
+		}
 	}
 
 	playState.beat = timeSinceBeat;

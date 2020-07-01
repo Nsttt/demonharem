@@ -157,7 +157,6 @@
 	background-image: url("./img/back.jpg");
 	background-size: cover;
 	background-position: top right;
-	background-attachment: fixed;
 
 	.has-webp & {
 		background-image: url("./img/webp/back.webp");
@@ -195,7 +194,7 @@
 	align-items: center;
 	position: relative;
 	padding: 0 10px;
-	background-image: url(../assets/img/dialogueBG_hell.png);
+	background-image: url("../assets/img/dialogueBG_hell.png");
 	color: #404040;
 	background-size: cover;
 	background-position: center;
@@ -203,11 +202,11 @@
 	border-bottom: solid 2px #ddd;
 
 	&:nth-child(odd) {
-		background-image: url(../assets/img/dialogueBG_hell.png);
+		background-image: url("../assets/img/dialogueBG_hell.png");
 	}
 
 	&:nth-child(even) {
-		background-image: url(../assets/img/dialogueBG_hell.png);
+		background-image: url("../assets/img/dialogueBG_hell.png");
 	}
 
 	.center,

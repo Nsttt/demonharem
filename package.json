@@ -1,11 +1,11 @@
 {
-	"name": "satania.moe",
+	"name": "demonharem",
 	"description": ">:3",
 	"private": true,
-	"author": "Pizzacus",
-	"version": "6.6.6",
-	"repository": "https://github.com/Pizzacus/satania.moe",
-	"homepage": "https://satania.moe",
+	"author": "Nsttt",
+	"version": "1.0.0",
+	"repository": "https://github.com/nsttt/demonharem",
+	"homepage": "https://demonwaifus.com",
 	"scripts": {
 		"build": "gulp build",
 		"serve": "gulp serve"
