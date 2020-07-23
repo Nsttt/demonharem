@@ -11,7 +11,7 @@ window.javascriptLocales = {
 	searchBar: "this isn't a real search bar",
 	snedHelp: "pls send helppp",
 	perfection: "perfection",
-	searchBarName: "satania",
+	searchBarName: "Helltaker",
 	newTab: "Link opens in a new tab."
 }
 
@@ -130,7 +130,7 @@ searchbar.addEventListener("click", event => {
 	}
 
 	lastTimeout = setTimeout(() => {
-		searchbarText.innerText = javascriptLocales.searchBarName || "satania";
+		searchbarText.innerText = javascriptLocales.searchBarName || "Helltaker";
 	}, 2000);
 });
 
