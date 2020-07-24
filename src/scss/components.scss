@@ -685,7 +685,7 @@ table {
 // COMPARE -- For all the characters.
 .compare {
 	display: flex;
-	overflow-x: auto;
+	overflow-x: visible;
 	justify-content: center;
 
 	.character {
