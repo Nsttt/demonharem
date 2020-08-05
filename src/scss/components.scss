@@ -852,12 +852,12 @@ table {
 }
 
 // EVEN POPE FRANCIS LOVES SATANIA -- I hear he's quite popular in the Bible fandom
-.pope-francis {
-	background-image: url('img/pope.jpg');
+.big_background {
+	background-image: url('img/big_background.png');
 	min-height: 50vw !important;
 
 	.has-webp & {
-		background-image: url('img/webp/pope.webp');
+		background-image: url('img/webp/big_background.webp');
 	}
 }
 

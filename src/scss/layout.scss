@@ -194,7 +194,8 @@
 	align-items: center;
 	position: relative;
 	padding: 0 10px;
-	background-image: url("../assets/img/dialogueBG_hell.png");
+	background: #fff;
+	background-color: #0a0a23;
 	color: #404040;
 	background-size: cover;
 	background-position: center;
@@ -219,7 +220,7 @@
 	}
 
 	h2 {
-		color: #444;
+		color: #f9f9f8;
 		font-size: 60px;
 		font-weight: 500;
 		margin: 5px 0;
@@ -227,31 +228,12 @@
 	}
 
 	p {
-		color: #555;
+		color: #f9f9f8;
 		font-size: 24px;
 		font-weight: 300;
 		line-height: 1.4;
 		margin: 24px 0 12px;
 		text-align: center;
-	}
-
-	&.background {
-		padding: 30px 0;
-		text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
-
-		h2 {
-			color: #fff;
-			font-size: 64px;
-			font-weight: 500;
-			margin: auto;
-		}
-
-		p {
-			color: #fff;
-			font-size: 32px;
-			margin: auto 16px;
-			font-weight: 400;
-		}
 	}
 }
 
@@ -264,19 +246,19 @@
 	align-items: center;
 	position: relative;
 	padding: 0 10px;
-	background-image: url("../assets/img/dialogueBG_hell.png");
-	color: #404040;
+	background: #fff;
+	color: #dadada;
 	background-size: cover;
 	background-position: center;
 	min-height: 500px;
 	border-bottom: solid 2px #ddd;
 
 	&:nth-child(odd) {
-		background-image: url("../assets/img/dialogueBG_hell.png");
+		background-color: #0a0a23;
 	}
 
 	&:nth-child(even) {
-		background-image: url("../assets/img/dialogueBG_hell.png");
+		background-color: #0c0c2b;
 	}
 
 	.center,
@@ -318,14 +300,14 @@
 	}
 
 	h2 {
-		color: #444;
+		color: #e94c54;
 		font-size: 42px;
 		font-weight: 500;
 		margin: 5px 0;
 	}
 
 	p {
-		color: #555;
+		color: #f9f9f8;
 		font-size: 24px;
 		font-weight: 300;
 		line-height: 1.4;
@@ -333,7 +315,7 @@
 
 		b {
 			font-weight: 500;
-			color: #444;
+			color: #e94c54;
 		}
 	}
 
