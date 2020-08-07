@@ -109,7 +109,9 @@
 	height: 100%;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.30) 100%);
 	z-index: 5;
+	
 }
+
 
 .main .title {
 	display: flex;
@@ -138,6 +140,10 @@
 		margin: 0 0 10px;
 	}
 
+	.logo {
+		width: 50%;
+	}
+
 	.button-container {
 		margin: 60px;
 
@@ -146,20 +152,20 @@
 			vertical-align: top;
 		}
 	}
-
 	#discord-count,
 	#reddit-count {
 		display: none;
+	
 	}
 }
 
 .intro {
-	background-image: url("./img/back.jpg");
+	background-image: url("./img/dialogueBG_hell.png");
 	background-size: cover;
-	background-position: top right;
+	background-position: center;
 
 	.has-webp & {
-		background-image: url("./img/webp/back.webp");
+		background-image: url("./img/webp/dialogueBG_hell.webp");
 	}
 
 	.title h2 {
@@ -194,13 +200,12 @@
 	align-items: center;
 	position: relative;
 	padding: 0 10px;
-	background: #fff;
-	background-color: #290D22;
+	background: #290D22;
 	color: #404040;
 	background-size: cover;
 	background-position: center;
 	min-height: 500px;
-	border-bottom: solid 2px #ddd;
+	border-bottom: solid 2px #302b2f;
 
 	.center,
 	.left,
@@ -251,7 +256,7 @@
 	background-size: cover;
 	background-position: center;
 	min-height: 500px;
-	border-bottom: solid 2px #ddd;
+	border-bottom: solid 2px #302b2f;
 
 	&:nth-child(odd) {
 		background-color: #290D22;
@@ -261,15 +266,26 @@
 		background-color: #200a1b;
 	}
 
-	.center,
-	.left,
-	.right {
+	.center{
 		display: inline-block;
 		width: 50%;
 		max-width: 512px;
 		z-index: 10;
 		padding: 50px 0;
 		margin: 0 10px;
+	}
+
+	.left,
+	.right {
+		display: inline-block;
+		width: 50%;
+		z-index: 10;
+		padding: 50px 0;
+		margin: 0 10px;
+
+		p{
+			max-width: 512px;
+		}
 	}
 
 	.image {
@@ -322,12 +338,13 @@
 	&.background {
 		padding: 30px 0;
 		text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
-
 		h2 {
-			color: #fff;
+			color: #e94c54;
 			font-size: 64px;
 			font-weight: 500;
 			margin: auto;
+			text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+			background: rgba(0, 0, 0, 0.5);
 		}
 
 		p {
@@ -335,6 +352,8 @@
 			font-size: 32px;
 			margin: auto 16px;
 			font-weight: 400;
+			text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+			background: rgba(0, 0, 0, 0.5);
 		}
 	}
 }
