@@ -575,6 +575,7 @@ table {
 	tbody {
 		font-size: 18px;
 		display: block;
+		color: black;
 
 		// Doing the borders like that makes them prettier on the left and right than when just applying to the tbody
 		// Also, it fixes weird flex spacing issues
@@ -687,6 +688,7 @@ table {
 	display: flex;
 	overflow-x: visible;
 	justify-content: center;
+	color: #000000;
 
 	.character {
 		margin: 10px;
@@ -708,7 +710,7 @@ table {
 			background: #F7F7F7;
 			padding: 10px;
 			border-top: 2px solid #d5d5d5;
-
+			
 			.small {
 				color: rgba(0,0,0,0.6);
 				font-size: 16px;
@@ -885,6 +887,7 @@ table {
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	font-weight: 400;
+	color: #000000;
 
 	b {
 		font-weight: 600;
