@@ -225,7 +225,7 @@ function updateCounts() {
 	}
 
 	document.getElementById('last-updated').innerText =
-		(new Date(1596808131698))
+		(new Date(1596492000000))
 			.toLocaleDateString(document.body.parentElement.lang, {
 				year: 'numeric',
 				month: 'long',
