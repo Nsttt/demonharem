@@ -158,6 +158,14 @@
 	
 	}
 }
+.rating-buttons {
+	margin: 60px;
+	
+	& > span {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
 
 .intro {
 	background-image: url("./img/dialogueBG_hell.png");
