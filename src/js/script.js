@@ -3,14 +3,14 @@ import 'whatwg-fetch';
 import "./closest";
 
 window.javascriptLocales = {
-	copyMessage: "Just wanted to let you know that Satania is always with you! Even inside your clipboard! We are everywhere and you should really join us!\n" +
+	copyMessage: "HAHAHA FOOL, THE POWER OF THIS WEBPAGE EVEN REACHES YOUR CLIPBOARD AND CAN CONTROL IT AT WILL\n" +
 		"Also yes, any website can access your clipboard however they want, isn't that creepy?\n" +
-		"Regardless, Satania is the BEST WAIFU, and you should agree! http://satania.moe/",
+		"Regardless, Helltaker is the best game there is and you should agree too! http://demonwaifus.com/",
 	searchByVoice: "lmao, no one uses this button",
 	searchButton: "but the results are already there =]",
 	searchBar: "this isn't a real search bar",
 	snedHelp: "pls send helppp",
-	perfection: "perfection",
+	paradise: "paradise",
 	searchBarName: "Helltaker",
 	newTab: "Link opens in a new tab."
 }
@@ -145,7 +145,7 @@ document.getElementById("listen").addEventListener("click", () => {
 		audioPlayingAtOnce--;
 
 		if (audioPlayingAtOnce < 8) {
-			document.getElementById("definition-name").innerText = javascriptLocales.perfection;
+			document.getElementById("definition-name").innerText = javascriptLocales.paradise;
 		}
 	});
 
