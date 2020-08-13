@@ -196,17 +196,17 @@ document.addEventListener("keydown", event => {
 	}
 });
 
-let guild, subreddit;
+let reviews, subreddit;
 
-fetch("/discord.json?with_counts=true")
+fetch("")
 	.then(res => res.json())
-	.then(fetchedGuild => {
-		guild = fetchedGuild;
+	.then(fetchedReviews => {
+		reviews = fetchedReviews;
 		updateCounts();
 	});
 
-fetch("/reddit.json")
-	.then(res => res.json())
+fetch("https://www.reddit.com/r/helltaker/about.json")
+	.then(res => {console.log(res), res.json()})
 	.then(fetchedSubreddit => {
 		subreddit = fetchedSubreddit;
 		updateCounts();
@@ -214,9 +214,9 @@ fetch("/reddit.json")
 
 function updateCounts() {
 	console.dir(document.documentElement.lang);
-	if (guild) {
-		document.getElementById("discord-number").innerText = guild.approximate_member_count.toLocaleString(document.documentElement.lang);
-		document.getElementById("discord-count").style.display = "inline-block";
+	if (reviews) {
+		document.getElementById("steam-number").innerText = query_summary.totalreviews.toLocaleString(document.documentElement.lang);
+		document.getElementById("steam-count").style.display = "inline-block";
 	}
 
 	if (subreddit) {
