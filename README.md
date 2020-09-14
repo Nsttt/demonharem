@@ -14,7 +14,6 @@
 - [DemonHarem: A Helltaker page](#demonharem-a-helltaker-page)
   - [Table of Contents](#table-of-contents)
   - [Original Work](#original-work)
-  - [Usage](#usage)
   - [Installation](#installation)
   - [Contribute](#contribute)
     - [Step 1](#step-1)
@@ -30,12 +29,6 @@
 Most of the code on this page is an edit from the <a href="https://github.com/Pizzacus/satania.moe/">Pizzacus repository</a> of <a href="https://satania.moe/">satania.moe</a>. You can check it out in the links, it's pretty cool.
 
 Also to add to that, all the art in the page (outside of the artwork) belongs to <a href="https://twitter.com/vanripperart">Vanripper</a> and it's glorious game <a href="https://store.steampowered.com/app/1289310/Helltaker/">Helltaker</a>. Check it out and play it, it's free!
-
----
-
-## Usage
-
-You can access to it on http://www.nstlopez.com/githunter/
 
 ---
 
