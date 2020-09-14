@@ -202,44 +202,8 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-let reviews, subreddit;
-
-fetch("")
-  .then((res) => res.json())
-  .then((fetchedReviews) => {
-    reviews = fetchedReviews;
-    updateCounts();
-  });
-
-fetch("https://www.reddit.com/r/helltaker/about.json")
-  .then((res) => {
-    console.log(res), res.json();
-  })
-  .then((fetchedSubreddit) => {
-    subreddit = fetchedSubreddit;
-    updateCounts();
-  });
-
 function updateCounts() {
   console.dir(document.documentElement.lang);
-  if (reviews) {
-    document.getElementById(
-      "steam-number"
-    ).innerText = query_summary.totalreviews.toLocaleString(
-      document.documentElement.lang
-    );
-    document.getElementById("steam-count").style.display = "inline-block";
-  }
-
-  if (subreddit) {
-    document.getElementById(
-      "reddit-number"
-    ).innerText = subreddit.data.subscribers.toLocaleString(
-      document.documentElement.lang
-    );
-    document.getElementById("reddit-count").style.display = "inline-block";
-  }
-
   document.getElementById("last-updated").innerText = new Date(
     1596492000000
   ).toLocaleDateString(document.body.parentElement.lang, {
