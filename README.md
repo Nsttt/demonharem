@@ -13,7 +13,7 @@
 
 - [DemonHarem: A Helltaker page](#demonharem-a-helltaker-page)
   - [Table of Contents](#table-of-contents)
-  - [Original Work](#original-work)
+  - [Credits](#Credits)
   - [Installation](#installation)
   - [Contribute](#contribute)
     - [Step 1](#step-1)
@@ -24,7 +24,7 @@
 
 ---
 
-## Original Work
+## Credits
 
 Most of the code on this page is an edit from the <a href="https://github.com/Pizzacus/satania.moe/">Pizzacus repository</a> of <a href="https://satania.moe/">satania.moe</a>. You can check it out in the links, it's pretty cool.
 
